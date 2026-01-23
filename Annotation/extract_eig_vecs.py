@@ -130,25 +130,12 @@ if __name__ == "__main__":
     device = args.device
     dataset_root = args.dataset_root
     if args.split == "val":
-        '''
-        xmlfolder='/netscratch/zlu/dataset/imagenet-vid/eig_vecs_train/dino_b8'
-        exist = set(os.listdir(xmlfolder))
-        imgfolder = args.dataset_root+'/train/'
-        imgs=set(os.listdir(imgfolder))
-
-        not_exist = imgs-exist
-        img_files=[]
-        #print('####',not_exist)
-        for video in not_exist:
-            path=imgfolder+video
-            img= glob(f"{path}/*.JPEG")
-            img_files=img_files+img
-        ''' 
-        img_files = glob(f"{dataset_root}/train/*/*.JPEG")
+        
+        img_files = glob(f"{dataset_root}/val/*/*.JPEG")
     elif args.split == "train":
         
-        #img_files = glob(f"{dataset_root}/train/JPEGImages/*/*.jpg")
-        img_files = glob(f"{dataset_root}/train/ILSVRC2015_VID_train_0003/ILSVRC2015_train_01140001/*.JPEG")
+        img_files = glob(f"{dataset_root}/train/JPEGImages/*/*.jpg")
+       
         
     else:
         raise ValueError(f"Invalid split {args.split} provided. Must be one of ['train', 'val']")
