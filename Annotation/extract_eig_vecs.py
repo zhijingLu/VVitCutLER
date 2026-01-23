@@ -134,7 +134,7 @@ if __name__ == "__main__":
         img_files = glob(f"{dataset_root}/val/*/*.JPEG")
     elif args.split == "train":
         
-        img_files = glob(f"{dataset_root}/train/JPEGImages/*/*.jpg")
+        img_files = glob(f"{dataset_root}/train/*/*.jpg")
        
         
     else:
