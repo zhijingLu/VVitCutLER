@@ -1,5 +1,8 @@
 # VVitCutLER
 
+
+
+
 ## Install
 please install all package in install.sh
 
@@ -27,8 +30,77 @@ please download the youtubevis21 from [here](https://codalab.lisn.upsaclay.fr/co
 
 
 ## VitCut--create psudo masks
-step 1: Creating eigenvectors example (extract_eig_vecs.py)
-'''
+step 1: Creating eigenvectors example (extract_eig_vecs.py),please pay attention on format of imgs.(JPEG or JPG)
+```
 cd Annotation
 python extract_eig_vecs.py --split train --output-dir pathtodataset/imagenetvid/eig_vecs_train
-'''
+```
+
+step 2: create_pseudo_masks
+```
+cd Annotation
+export DETECTRON2_DATASETS=path to dataset(../../dataset/)
+python3 vit_createmasks.py --dataset-root ../dataset/imagenetVID  --split train --eig-vec-dir path to i/magenetvid/eig_vecs_train/ --save-xml path to dataset/magenetvid/imagexml/
+```
+after finishing making all xml for each image, please open convert_coco.py and change the path, and run:
+```
+cd Annotation/helper
+python convert_coco.py 
+```
+
+## Unsupervised Training VVitCutLER
+please change the mask_rcnn_R_50_FPN.yaml for different datasets.
+```
+cd Detector 
+export DETECTRON2_DATASETS=path to /dataset/
+python train_net.py --num-gpus 1 \
+  --config-file model_zoo/configs/CutLER-ImageNet/mask_rcnn_R_50_FPN.yaml \
+  MODEL.MASK_ON True \
+  OUTPUT_DIR output/
+
+```
+
+if you want to self-training, please 
+```
+python train_net.py --num-gpus 8 \
+  --config-file model_zoo/configs/CutLER-ImageNet/mask_rcnn_R_50_FPN.yaml \
+  --test-dataset imagenetvid_train \
+  --eval-only TEST.DETECTIONS_PER_IMAGE 30 \
+  MODEL.WEIGHTS output/model_final.pth \ # load previous stage/round checkpoints
+  OUTPUT_DIR output/ # path to save model predictions
+```
+then make the new annotation file:
+```
+python tools/get_self_training_ann.py \
+  --new-pred output/inference/coco_instances_results.json \ # load model predictions
+  --prev-ann  # path to the old annotation file.
+  --save-path # path to save a new annotation file.
+  --threshold 0.7
+
+```
+Finally, place "saved_new_annotation.json" under "DETECTRON2_DATASETS/imagenetvid/annotations/", then launch the self-training process:
+```
+python train_net.py --num-gpus 8 \
+  --config-file model_zoo/configs/CutLER-ImageNet/cascade_mask_rcnn_R_50_FPN_self_train.yaml \
+  --train-dataset imagenet_train_r1 \
+  MODEL.WEIGHTS output/model_final.pth \ # load previous stage/round checkpoints
+  OUTPUT_DIR output/self-train-r1/ # path to save checkpoints
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
