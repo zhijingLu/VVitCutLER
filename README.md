@@ -2,7 +2,7 @@
 
 
 show in video:
-![Demo](show/1.gif)
+![Demo](../show/1.gif)
 
 
 
