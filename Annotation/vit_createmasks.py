@@ -592,7 +592,7 @@ if __name__ == "__main__":
     
     decoder = DINOv2SegDecoder(out_size=64).to(args.device)
     ##vit-sam2decoder_imagenet  vit_sam2decoder_youtubevis
-    checkpoint = torch.load("/netscratch/zlu/CutvLER/output/youtube_vit_2/student_teacher_epoch18.pt", map_location=args.device)
+    checkpoint = torch.load("../student_teacher_pretrained.pt", map_location=args.device)
     state_dict = checkpoint["student_model"]
     
     if any(k.startswith("module.") for k in state_dict.keys()):
