@@ -29,5 +29,6 @@ please download the youtubevis21 from [here](https://codalab.lisn.upsaclay.fr/co
 ## VitCut--create psudo masks
 step 1: Creating eigenvectors example (extract_eig_vecs.py)
 '''
-cd 
+cd Annotation
+python extract_eig_vecs.py --split train --output-dir pathtodataset/imagenetvid/eig_vecs_train
 '''
