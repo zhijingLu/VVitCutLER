@@ -42,6 +42,10 @@ pip install mmcv-full==1.7.0
 cd ../CutLER
 pip install -r videocutler/requirements.txt
 
+git clone https://github.com/facebookresearch/sam2.git
+cd sam2
+pip install -e .
+
 
 pip install transformers timm 
 pip install --upgrade transformers timm
