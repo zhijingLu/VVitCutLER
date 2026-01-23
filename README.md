@@ -2,7 +2,8 @@
 
 
 show in video:
-![Demo](show/1.gif)
+<img src="show/1.gif" width="600" alt="Demo">
+
 
 
 
