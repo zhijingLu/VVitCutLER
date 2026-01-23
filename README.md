@@ -101,7 +101,8 @@ python train_net.py --num-gpus 8 \
 
 # Student decoder
 step 1: download the teacher pretrained model sam2-1_hiera_large.pt([segment anything2](https://huggingface.co/facebook/sam2.1-hiera-large/blob/38e0b24f84dfe8a95d5b6cb53bc1b772cbe15dc2/sam2.1_hiera_large.pt))
-step 2: prepare the dataset [youtubevis21](README.md#Datasets Preparation)
+step 2: prepare the dataset [youtubevis21](#datasets-preparation)
+
 
 
 
