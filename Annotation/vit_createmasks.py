@@ -13,7 +13,7 @@ from collections import defaultdict
 from helper.write_xml import write_to_xml_vit,write_to_xml_box
 import numpy as np
 from transformers import AutoModel, AutoImageProcessor
-from helper.vit_sam2_2 import DINOv2SegDecoder
+from student_decoder.vit_sam2_model import DINOv2SegDecoder
 import cv2
 
 
