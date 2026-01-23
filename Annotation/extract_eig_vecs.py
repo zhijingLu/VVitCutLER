@@ -122,8 +122,7 @@ if __name__ == "__main__":
     parser.add_argument("--device", type=str, default="cuda", help="computation device", choices=["cpu", "cuda"])
     # add argument of list of models to use
     parser.add_argument("--models-batch-list", nargs='+',
-                        default=[("dino_b16", 256), ("dino_s8", 32), ("dino_b8", 16)],
-                        #("dino_s16", 512), ("dinov2_b14", 256), ("dinov2_s14", 256), ("dino_b16", 256), ("dino_s8", 32), ("dino_b8", 16)
+                        default=[("dino_s16", 512), ("dinov2_b14", 256), ("dinov2_s14", 256), ("dino_b16", 256), ("dino_s8", 32), ("dino_b8", 16)],
                         help="List of models to use. Each model is a tuple of (model_name, batch_size)")
     args = parser.parse_args()
 
@@ -134,7 +133,7 @@ if __name__ == "__main__":
         img_files = glob(f"{dataset_root}/val/*/*.JPEG")
     elif args.split == "train":
         
-        img_files = glob(f"{dataset_root}/train/*/*.jpg")
+        img_files = glob(f"{dataset_root}/train/*/*.JPEG")
        
         
     else:
