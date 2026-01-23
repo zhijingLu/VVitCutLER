@@ -5,6 +5,7 @@ show in video:
 <p>
   <img src="show/1.gif" width="300" alt="Demo 1">
   <img src="show/2.gif" width="300" alt="Demo 2">
+  <img src="show/3.gif" width="300" alt="Demo 3">
 </p>
 
 
