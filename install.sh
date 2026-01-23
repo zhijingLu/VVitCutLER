@@ -1,7 +1,8 @@
 #!/bin/bash
 
 apt update 
-pip install pytorch==1.8.1 torchvision==0.9.1 torchaudio==0.8.1 -c pytorch
+
+pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu121
 pip install submitit
 # torch==1.8.1
 # torchvision==0.9.1
@@ -41,8 +42,6 @@ pip install mmcv-full==1.7.0
 cd ../CutLER
 pip install -r videocutler/requirements.txt
 
-pip uninstall torch torchvision torchaudio -y
-pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu121
 
 pip install transformers timm 
 pip install --upgrade transformers timm
