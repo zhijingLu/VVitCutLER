@@ -2,8 +2,7 @@
 
 
 show in video:
-<img src="show/1.gif" width="300" alt="Demo">
-<img src="show/2.gif" width="300" alt="Demo">
+<img src="show/1.gif" width="300" alt="Demo"><img src="show/2.gif" width="300" alt="Demo">
 
 
 
