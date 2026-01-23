@@ -100,16 +100,15 @@ python train_net.py --num-gpus 8 \
 ```
 
 # Student decoder
-step 1: download the teacher pretrained model sam2-1_hiera_large.pt([segment anything2](https://huggingface.co/facebook/sam2.1-hiera-large/blob/38e0b24f84dfe8a95d5b6cb53bc1b772cbe15dc2/sam2.1_hiera_large.pt))
-step 2: prepare the dataset [youtubevis21](#datasets-preparation)
+step 1: prepare the dataset [youtubevis21](#datasets-preparation)
+step 2: go into the vit_sam2_2.py, change your dataset path, and run:
 
+```
+cd Annotation/student_decoder
+OMP_NUM_THREADS=2 torchrun --nproc_per_node=1 --master_port=29507 vit_sam2_2.py
 
-
-
-
-
-
-
+```
+or directly use our pretrained [decoder](https://drive.google.com/file/d/1V24RoKXFR_0xCkaAYSdEvy2jUPZZYFV5/view?usp=drive_link) and put in Annotation folder.
 
 
 
