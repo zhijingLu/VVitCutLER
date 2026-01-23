@@ -4,14 +4,14 @@ This project presents VVitCutLER, Video-VitCut-and-Learn pipeline for unsupervis
 
 show in video:
 <p>
-  <img src="show/1.gif" width="300" alt="Demo 1">
-  <img src="show/2.gif" width="300" alt="Demo 2">
-  <img src="show/5.gif" width="300" alt="Demo 5">
+  <img src="show/1.gif" width="250" alt="Demo 1">
+  <img src="show/2.gif" width="250" alt="Demo 2">
+  <img src="show/5.gif" width="250" alt="Demo 5">
 </p>
 <p>
-  <img src="show/3.gif" width="300" alt="Demo 3">
-  <img src="show/4.gif" width="300" alt="Demo 4">
-  <img src="show/6.gif" width="300" alt="Demo 6">
+  <img src="show/3.gif" width="250" alt="Demo 3">
+  <img src="show/4.gif" width="250" alt="Demo 4">
+  <img src="show/6.gif" width="250" alt="Demo 6">
 </p>
 
 
