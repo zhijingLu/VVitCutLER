@@ -8,9 +8,8 @@ show in video:
   <
 </p>
 <p>
-
   <img src="show/3.gif" width="300" alt="Demo 3">
-   <img src="show/4.gif" width="300" alt="Demo 4">
+  <img src="show/4.gif" width="300" alt="Demo 4">
 </p>
 
 
