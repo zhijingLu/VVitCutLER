@@ -705,7 +705,7 @@ def train_ddp(rank, world_size):
     logger = logging.getLogger()
     logger.setLevel(logging.WARNING)
 
-    init_checkpoint_path = "/netscratch/zlu/CutvLER/output/vit_sam2decoder_youtubevis/student_teacher_epoch24.pt"
+    init_checkpoint_path = None #"/netscratch/zlu/CutvLER/output/vit_sam2decoder_youtubevis/student_teacher_epoch24.pt"
     checkpoint_path = None
     start_epoch = 0  # continue from a specific epoch if needed
 
