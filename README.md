@@ -4,7 +4,7 @@ This project presents VVitCutLER, Video-VitCut-and-Learn pipeline for unsupervis
 
 show in video:
 <p>
-  <img src="screenshot_varjo/camera.png" width="250" alt="Demo 1">
+  <img src="show/1.png" width="250" alt="Demo 1">
   <img src="show/2.gif" width="250" alt="Demo 2">
   <img src="show/5.gif" width="250" alt="Demo 5">
 </p>
